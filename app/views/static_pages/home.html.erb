@@ -1,16 +1,56 @@
 <style>
-  google-map {
-    display: block;
-    height: 600px;
-  }
-  
-  paper-button {
-      height: 20px;
-      width: 20px;
-  }
+  html,body {
+  height: 100%;
+  margin: 0;
+  background-color: #E5E5E5;
+  font-family: 'RobotoDraft', sans-serif;
+}
+core-header-panel {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+core-toolbar {
+  background: #03a9f4;
+  color: white;
+}
+
+#tabs {
+  width: 100%;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+google-map {
+  display: block;
+  height: 600px;
+}
 </style>
 
-<google-map latitude="37.77493" longitude="-122.41942"></google-map>
+<core-header-panel>
 
-<paper-button></paper-button>
-;lkj
+  <core-toolbar>
+    <paper-tabs id="tabs" selected="all" self-end>
+    <paper-tab name="all">All</paper-tab>
+    <paper-tab name="favorites">Favorites</paper-tab>
+  </paper-tabs>
+  </core-toolbar>
+
+     <google-map latitude="37.77493" longitude="-122.41942" fitToMarkers>
+       
+    </google-map>
+
+</core-header-panel>
+
+
+<script>
+  var tabs = document.querySelector('paper-tabs');
+
+  tabs.addEventListener('core-select', function() {
+    console.log("Selected: " + tabs.selected);
+  });
+</script>
