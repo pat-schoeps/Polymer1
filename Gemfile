@@ -14,9 +14,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '3.2.0'
 gem 'sprockets'
 gem 'rails-html-sanitizer', '1.0.1'
-gem 'polymer-rails'
-gem 'polymer-core-rails'
-gem 'polymer-paper-rails'
+gem 'emcee'
+
 
 
 group :doc do

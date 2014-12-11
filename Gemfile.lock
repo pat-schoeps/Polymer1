@@ -58,6 +58,10 @@ GEM
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
+    emcee (1.0.9)
+      nokogiri (~> 1.0)
+      nokogumbo (~> 1.1)
+      rails (~> 4.0)
     erubis (2.7.0)
     execjs (2.2.2)
     ffi (1.9.6)
@@ -95,14 +99,6 @@ GEM
     nokogumbo (1.1.13)
       nokogiri
     pg (0.15.1)
-    polymer-core-rails (0.2.0)
-      polymer-rails (~> 0.2.2)
-    polymer-paper-rails (0.2.0)
-      polymer-rails (~> 0.2.2)
-    polymer-rails (0.2.5)
-      nokogiri (~> 1.6)
-      nokogumbo (~> 1.1)
-      rails (>= 3.1.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -205,6 +201,7 @@ DEPENDENCIES
   capybara (= 2.1.0)
   childprocess (= 0.3.6)
   coffee-rails (~> 4.0.0)
+  emcee
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
@@ -212,9 +209,6 @@ DEPENDENCIES
   minitest-reporters (= 1.0.5)
   nokogiri
   pg (= 0.15.1)
-  polymer-core-rails
-  polymer-paper-rails
-  polymer-rails
   rails (= 4.1.7)
   rails-html-sanitizer (= 1.0.1)
   rails_12factor (= 0.0.2)
