@@ -30,7 +30,7 @@ google-map {
   height: 600px;
 }
 </style>
-
+<link rel="import" href="post-list.html">
 <core-header-panel>
 
   <core-toolbar>
@@ -40,9 +40,16 @@ google-map {
   </paper-tabs>
   </core-toolbar>
 
-     <google-map latitude="37.77493" longitude="-122.41942" fitToMarkers>
-       
-    </google-map>
+     <div class="container" layout vertical center>
+<post-list show="all"></post-list>
+        <post-card>
+          <img width="70" height="70" 
+            src="../images/avatar-07.svg">
+          <h2>Another Developer</h2>
+          <p>I'm composing with shadow DOM!</p>
+        </post-card>
+
+</div>  
 
 </core-header-panel>
 
