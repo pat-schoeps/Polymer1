@@ -1,63 +1,24 @@
 <style>
-  html,body {
-  height: 100%;
-  margin: 0;
-  background-color: #E5E5E5;
-  font-family: 'RobotoDraft', sans-serif;
-}
-core-header-panel {
-  height: 100%;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-core-toolbar {
-  background: #03a9f4;
-  color: white;
-}
-
-#tabs {
-  width: 100%;
-  margin: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  text-transform: uppercase;
-}
-
-google-map {
-  display: block;
-  height: 600px;
-}
-</style>
-<link rel="import" href="post-list.html">
-<core-header-panel>
-
-  <core-toolbar>
-    <paper-tabs id="tabs" selected="all" self-end>
-    <paper-tab name="all">All</paper-tab>
-    <paper-tab name="favorites">Favorites</paper-tab>
-  </paper-tabs>
-  </core-toolbar>
-
-     <div class="container" layout vertical center>
-<post-list show="all"></post-list>
-        <post-card>
-          <img width="70" height="70" 
-            src="../images/avatar-07.svg">
-          <h2>Another Developer</h2>
-          <p>I'm composing with shadow DOM!</p>
-        </post-card>
-
-</div>  
-
-</core-header-panel>
-
-
-<script>
-  var tabs = document.querySelector('paper-tabs');
-
-  tabs.addEventListener('core-select', function() {
-    console.log("Selected: " + tabs.selected);
-  });
-</script>
+    div {
+      height: 100px;
+      width: 100px;
+      background: gray;
+    }
+  </style>
+</head>
+<body>
+  <template is="auto-binding">
+    <span>Press any of these keys: {{keys}}</span>
+    <core-a11y-keys id="a11y" keys="{{keys}}" on-keys-pressed="{{print}}"></core-a11y-keys>
+    <pre id="output"></pre>
+  </template>
+  <script>
+    addEventListener('template-bound', function(ev) {
+      ev.target.keys = "* pageup pagedown left right down up shift+a alt+a home end space enter"
+      ev.target.print = function(ev) {
+        console.log(ev.detail);
+        this.$.output.textContent += ev.detail.key + ' pressed!\n';
+      }
+    });
+  </script>
+</body>
